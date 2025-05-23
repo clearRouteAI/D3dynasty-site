@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORODRIVE | Tactical Mobility System</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00FF41;
+      font-family: monospace;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    .clock-bar {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0.6; }
+    }
+    .ping-flash {
+      animation: flash 1s infinite;
+      font-weight: bold;
+      color: #00FF41;
+    }
+    @keyframes flash {
+      0% { opacity: 1; }
+      50% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+    .section-title {
+      font-size: 1.5rem;
+      margin-top: 40px;
+      color: #00ffff;
+      border-bottom: 1px solid #00FF41;
+      padding-bottom: 5px;
+    }
+    p {
+      font-size: 1rem;
+      max-width: 900px;
+      line-height: 1.7;
+    }
+    .btn {
+      margin-top: 40px;
+      padding: 12px 24px;
+      background-color: transparent;
+      border: 2px solid #00FF41;
+      color: #00FF41;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #00FF41;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock-bar" id="clockBar"></div>
+  <h1>VAULT IDENT SEQUENCE: VERIFIED.</h1>
+  <p class="ping-flash">Node Checkpoint: Encrypted Ping Received</p>
+  <div class="section-title">Who We Are</div>
+  <p>D3 Dynasty Holdings Inc. is the secured operating entity behind ORODRIVE. As part of a broader portfolio of classified IP scrolls, this node is exclusively focused on encrypted vehicle command systems for tactical use. All inquiries are routed through protocol-gated access only.</p>
+  <div class="section-title">What We Do</div>
+  <p>ORODRIVE is an autonomous override protocol engineered for convoy compliance, tactical rerouting, and AI-based vehicle response. Originally developed to counteract civilian interference and enhance encrypted command control, our technology redefines how military-grade fleets move in contested or denied environments.</p>
+  <p>ORODRIVE is one of several sealed technologies under active development within the D3 Dynasty vault. Additional systems are being prepared for controlled release through encrypted access nodes.</p>
+  <a href="vault.html" class="btn">Request Access Protocol</a>
+  <script>
+    const zones = [
+      { label: 'NYC', tz: 'America/New_York' },
+      { label: 'LON', tz: 'Europe/London' },
+      { label: 'BER', tz: 'Europe/Berlin' },
+      { label: 'DXB', tz: 'Asia/Dubai' },
+      { label: 'HKG', tz: 'Asia/Hong_Kong' },
+      { label: 'TYO', tz: 'Asia/Tokyo' }
+    ];
+    function updateClocks() {
+      const container = document.getElementById('clockBar');
+      container.innerHTML = zones.map(({ label, tz }) => {
+        const time = new Date().toLocaleTimeString('en-US', {
+          timeZone: tz,
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        });
+        return `<span><strong>${label}</strong>: ${time}</span>`;
+      }).join('');
+    }
+    updateClocks();
+    setInterval(updateClocks, 60000);
+  </script>
+</body>
+</html>

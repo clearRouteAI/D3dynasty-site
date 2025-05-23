@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ORODRIVE | VAULT ACCESS</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #00FF41;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #00FF41;
+      padding-bottom: 10px;
+    }
+    p {
+      max-width: 800px;
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 500px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 20px #00FF41;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.75rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>ORODRIVE VAULT ACCESS</h1>
+  <p>
+    This is a secured signal intake for encrypted vehicle command technologies. If you’ve been directed here, your session is being logged. All form responses are verified and will receive encrypted review. Expect direct response from <strong>ze.monroe@proton.me</strong> if cleared.
+  </p>
+  <iframe src="https://form.typeform.com/to/fKuGZgWK" allow="camera; microphone; autoplay; encrypted-media;"></iframe>
+  <footer>
+    D3 DYNASTY HOLDINGS INC. | Patent-Pending System | Encrypted Oversight Active
+  </footer>
+
+  <!-- GeoIP Trace and Email Ping -->
+  <script>
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        const body = `New visitor on ORODRIVE vault\n\nIP: ${data.ip}\nCity: ${data.city}\nRegion: ${data.region}\nCountry: ${data.country_name}\nTimeZone: ${data.timezone}\nOrg: ${data.org}`;
+
+        fetch('https://formsubmit.co/ajax/YOUR-OUTLOOK-EMAIL@domain.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            _subject: 'ORODRIVE Vault Visitor Logged',
+            message: body
+          })
+        });
+      });
+  </script>
+</body>
+</html>
